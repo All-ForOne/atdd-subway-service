@@ -57,7 +57,7 @@ public class PathAcceptanceTest extends AcceptanceTest {
         ExtractableResponse<Response> response = RestAssured
                 .given().log().all()
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .when().get("/paths?source={source}&target={target}", 1, 6)
+                .when().get("/paths?source={source}&target={target}", 1, 3)
                 .then().log().all()
                 .extract();
 

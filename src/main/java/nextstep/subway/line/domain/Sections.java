@@ -11,9 +11,17 @@ import java.util.stream.Collectors;
 @Embeddable
 public class Sections {
     @OneToMany(mappedBy = "line", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, orphanRemoval = true)
-    private final List<Section> sections = new ArrayList<>();
+    private final List<Section> sections;
 
     public Sections() {
+        this(new ArrayList<>());
+    }
+    public Sections(List<Section> sections) {
+        this.sections = sections;
+    }
+
+    public List<Section> getSections() {
+        return this.sections;
     }
 
     public List<Station> getStations() {
